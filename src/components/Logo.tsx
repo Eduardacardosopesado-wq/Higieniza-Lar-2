@@ -13,18 +13,14 @@ export const Logo: React.FC<LogoProps> = ({
 }) => {
   const isLight = variant === 'light';
 
-  // Strict aspect ratio and dimensions requested:
-  // Desktop Header: ~180px to 220px width
-  // Mobile Header: ~150px to 180px width
-  // Hero: Larger version (220px to 300px)
-  // Footer: High contrast & prominent
+  // Proportional responsive sizes designed for 320px to wide desktop:
   const sizeClasses = {
-    sm: 'w-[140px] sm:w-[160px]',
-    header: 'w-[155px] sm:w-[185px] md:w-[210px]',
-    md: 'w-[160px] sm:w-[200px]',
-    lg: 'w-[200px] sm:w-[240px]',
-    hero: 'w-[200px] sm:w-[250px] md:w-[280px]',
-    footer: 'w-[170px] sm:w-[210px]',
+    sm: 'w-[130px] sm:w-[160px]',
+    header: 'w-[140px] sm:w-[185px] md:w-[210px]',
+    md: 'w-[150px] sm:w-[200px]',
+    lg: 'w-[180px] sm:w-[240px]',
+    hero: 'w-[180px] sm:w-[240px] md:w-[280px]',
+    footer: 'w-[160px] sm:w-[210px]',
   };
 
   return (
@@ -39,7 +35,7 @@ export const Logo: React.FC<LogoProps> = ({
       <img
         src="/logo.png"
         alt="Higieniza Lar - Higienização e Impermeabilização de Estofados"
-        className={`${sizeClasses[size]} h-auto object-contain transition-transform`}
+        className={`${sizeClasses[size]} h-auto max-w-full object-contain`}
         loading="eager"
       />
     </div>

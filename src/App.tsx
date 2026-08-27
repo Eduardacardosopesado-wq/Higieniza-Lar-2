@@ -19,15 +19,14 @@ import { QuoteForm } from './components/QuoteForm';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
-import { MobileBottomBar } from './components/MobileBottomBar';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 selection:bg-blue-600 selection:text-white overflow-x-hidden w-full max-w-full">
       {/* 1. Header with brand logo, nav links and CTA */}
       <Header />
 
-      <main className="flex-grow">
+      <main className="flex-grow w-full max-w-full overflow-x-hidden">
         {/* 2. Hero - Primeira Dobra */}
         <Hero />
 
@@ -49,10 +48,10 @@ export default function App() {
         {/* 8. Oferta Combinada: Limpe. Renove. Proteja */}
         <CombinedOffer />
 
-        {/* 9. Antes e Depois (Slider Interativo Leve) */}
+        {/* 9. Antes e Depois (Comparação Estática) */}
         <BeforeAfter />
 
-        {/* 10. Como Funciona (4 Passos) */}
+        {/* 10. Como Funciona (3 Passos) */}
         <HowItWorks />
 
         {/* 11. Benefícios (Por que escolher a Higieniza Lar?) */}
@@ -83,12 +82,8 @@ export default function App() {
       {/* 19. Rodapé Oficial */}
       <Footer />
 
-      {/* 20. Botão Flutuante de WhatsApp */}
+      {/* 20. Botão Flutuante de WhatsApp (No mobile: apenas ícone circular verde) */}
       <FloatingWhatsApp />
-
-      {/* 21. Barra Fixa no Mobile */}
-      <MobileBottomBar />
     </div>
   );
 }
-

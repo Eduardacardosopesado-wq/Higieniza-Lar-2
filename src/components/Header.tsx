@@ -71,40 +71,41 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)]" id="header">
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] w-full" id="header">
       {/* 1. Top micro bar — discreet & compact */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-4 text-center sm:text-left">
+      <div className="bg-slate-900 text-slate-300 text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-slate-800/80">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
           
           {/* Left: Location */}
-          <div className="flex items-center gap-1.5 font-medium">
+          <div className="flex items-center gap-1.5 font-medium truncate">
             <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-            <span>
-              Unidade em <strong className="text-white font-semibold">Jardim Camburi, Vitória — ES</strong>
+            <span className="truncate">
+              <span className="hidden sm:inline">Unidade em </span>
+              <strong className="text-white font-semibold">Jardim Camburi, Vitória</strong>
               <span className="hidden md:inline text-slate-500 mx-2">|</span>
-              <span className="hidden md:inline">Atendimento em toda a Grande Vitória</span>
+              <span className="hidden md:inline">Toda a Grande Vitória</span>
             </span>
           </div>
 
           {/* Right: Instagram & WhatsApp */}
-          <div className="flex items-center gap-3 text-slate-300">
+          <div className="flex items-center gap-2.5 sm:gap-3 text-slate-300 shrink-0">
             <a 
               href={COMPANY.INSTAGRAM_URL} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              className="hidden sm:inline hover:text-white transition-colors"
             >
               {COMPANY.INSTAGRAM_HANDLE}
             </a>
-            <span className="text-slate-600">|</span>
+            <span className="hidden sm:inline text-slate-600">|</span>
             <a 
               href={COMPANY.WHATSAPP_URL} 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-green-400 text-slate-200 font-semibold transition-colors flex items-center gap-1"
             >
-              <span>WhatsApp:</span>
-              <span className="text-white">{COMPANY.PHONE_FORMATTED}</span>
+              <span className="hidden sm:inline">WhatsApp:</span>
+              <span className="text-white font-bold">{COMPANY.PHONE_FORMATTED}</span>
             </a>
           </div>
 
@@ -112,7 +113,7 @@ export const Header: React.FC = () => {
       </div>
 
       {/* 2. Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 lg:h-22 flex items-center justify-between">
         
         {/* Left: Large Prominent Brand Logo */}
         <div className="flex-shrink-0">
@@ -221,7 +222,7 @@ export const Header: React.FC = () => {
 
         </nav>
 
-        {/* Right: High Prominence CTA Button */}
+        {/* Right: High Prominence Desktop CTA Button */}
         <div className="hidden lg:flex items-center flex-shrink-0">
           <a
             href={getWhatsAppUrl()}
@@ -235,13 +236,13 @@ export const Header: React.FC = () => {
           </a>
         </div>
 
-        {/* Mobile menu trigger */}
+        {/* Mobile controls: LOGO | BOTÃO WHATSAPP | MENU HAMBÚRGUER */}
         <div className="flex lg:hidden items-center gap-2">
           <a
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2.5 rounded-xl bg-blue-50 text-blue-700 border border-blue-200"
+            className="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm transition-colors"
             aria-label="Falar pelo WhatsApp"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
@@ -249,7 +250,7 @@ export const Header: React.FC = () => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none border border-slate-200"
+            className="flex items-center justify-center w-10 h-10 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none border border-slate-200 transition-colors"
             aria-expanded={mobileMenuOpen}
             aria-label="Abrir menu"
             id="mobile-menu-toggle"
