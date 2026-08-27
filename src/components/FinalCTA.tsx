@@ -1,6 +1,6 @@
 import React from 'react';
 import { COMPANY, getWhatsAppUrl } from '../config/company';
-import { MessageCircle, MapPin, Sparkles } from 'lucide-react';
+import { MessageCircle, MapPin, ArrowRight } from 'lucide-react';
 
 export const FinalCTA: React.FC = () => {
   return (
@@ -26,10 +26,12 @@ export const FinalCTA: React.FC = () => {
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xl shadow-2xl shadow-blue-600/40 hover:scale-105 transition-all"
+            id="cta-final-button"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-black text-xl shadow-2xl shadow-blue-600/40 transition-colors"
           >
             <MessageCircle className="w-6 h-6 fill-current" />
             <span>SOLICITAR ORÇAMENTO</span>
+            <ArrowRight className="w-5 h-5" />
           </a>
         </div>
 

@@ -21,7 +21,7 @@ export const ServicesSection: React.FC = () => {
     {
       icon: Bed,
       name: 'Higienização de Colchões',
-      phrase: 'Remoção de ácaros, poeira e odores.',
+      phrase: 'Remoção profunda de poeira, resíduos e odores.',
       img: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=700&q=80',
       msg: 'Olá! Gostaria de um orçamento para Higienização de Colchão.',
     },
@@ -65,17 +65,17 @@ export const ServicesSection: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all flex flex-col text-left group"
+                className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-sm hover:border-blue-300 transition-colors flex flex-col text-left"
               >
                 {/* Image */}
-                <div className="h-52 w-full overflow-hidden relative bg-slate-100">
+                <div className="h-52 w-full overflow-hidden relative bg-slate-900">
                   <img
                     src={srv.img}
                     alt={srv.name}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute top-4 left-4 w-11 h-11 rounded-xl bg-white/95 backdrop-blur shadow-md flex items-center justify-center text-blue-700">
+                  <div className="absolute top-4 left-4 w-11 h-11 rounded-xl bg-white/95 shadow-md flex items-center justify-center text-blue-700">
                     <Icon className="w-6 h-6" />
                   </div>
                 </div>
@@ -91,12 +91,12 @@ export const ServicesSection: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Big CTA */}
+                  {/* CTA */}
                   <a
                     href={getWhatsAppUrl(srv.msg)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-blue-50 hover:bg-blue-700 text-blue-700 hover:text-white font-extrabold text-base transition-all border border-blue-200 hover:border-blue-700"
+                    className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-blue-50 hover:bg-blue-700 text-blue-700 hover:text-white font-extrabold text-base transition-colors border border-blue-200 hover:border-blue-700"
                   >
                     <MessageCircle className="w-5 h-5" />
                     <span>QUERO ORÇAMENTO</span>

@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
   const serviceSubItems = [
     {
       name: 'Higienização de Estofados',
-      desc: 'Limpeza profunda por extração e sucção',
+      desc: 'Limpeza profunda com máquina extratora',
       href: '#higienizacao',
       icon: Sparkles,
       color: 'text-blue-600 bg-blue-50',
@@ -121,7 +121,7 @@ export const Header: React.FC = () => {
           </a>
         </div>
 
-        {/* Center: Desktop Navigation (Single line, spacious, elegant) */}
+        {/* Center: Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-7 xl:gap-9 text-[15px] font-semibold text-slate-700 whitespace-nowrap" aria-label="Menu Principal">
           
           {/* Link 1: Início */}
@@ -155,7 +155,7 @@ export const Header: React.FC = () => {
             {/* Dropdown Menu Box */}
             {servicesDropdownOpen && (
               <div 
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2.5 space-y-1.5 transition-all animate-in fade-in slide-in-from-top-2 duration-150 z-50"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2.5 space-y-1.5 z-50"
               >
                 {serviceSubItems.map((item, idx) => {
                   const Icon = item.icon;
@@ -172,7 +172,7 @@ export const Header: React.FC = () => {
                       <div className="flex-1 min-w-0">
                         <p className="font-bold text-slate-900 text-sm group-hover:text-blue-700 transition-colors flex items-center justify-between">
                           <span>{item.name}</span>
-                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-blue-700" />
+                          <ArrowRight className="w-3.5 h-3.5 text-blue-700" />
                         </p>
                         <p className="text-xs text-slate-500 font-normal mt-0.5 leading-snug">
                           {item.desc}
@@ -228,7 +228,7 @@ export const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             id="header-cta-button"
-            className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm tracking-wide shadow-lg shadow-blue-700/20 hover:shadow-xl hover:-translate-y-0.5 transition-all whitespace-nowrap active:scale-95"
+            className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm tracking-wide shadow-lg shadow-blue-700/20 whitespace-nowrap transition-colors"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
             <span>SOLICITAR ORÇAMENTO</span>
@@ -262,7 +262,7 @@ export const Header: React.FC = () => {
 
       {/* 3. Mobile Vertical Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-8 space-y-4 shadow-2xl animate-in fade-in slide-in-from-top-2 duration-150">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-8 space-y-4 shadow-2xl">
           
           <nav className="flex flex-col space-y-1 text-base font-semibold text-slate-800">
             {/* Início */}

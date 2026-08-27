@@ -1,6 +1,6 @@
 import React from 'react';
 import { Logo } from './Logo';
-import { COMPANY, getWhatsAppUrl } from '../config/company';
+import { getWhatsAppUrl } from '../config/company';
 import { MessageCircle, ArrowRight, CheckCircle2, MapPin } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -17,11 +17,11 @@ export const Hero: React.FC = () => {
               <Logo size="hero" className="shrink-0" />
               <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-100/90 border border-blue-200 text-blue-950 text-xs sm:text-sm font-black tracking-wide uppercase">
                 <MapPin className="w-4 h-4 text-blue-700 shrink-0" />
-                <span>Grande Vitória — ES</span>
+                <span>JARDIM CAMBURI — VITÓRIA/ES</span>
               </div>
             </div>
 
-            {/* Big H1 Typography (approx 2 lines desktop, 2-3 mobile) */}
+            {/* Big H1 Typography */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.1]">
               Seu sofá limpo, <br />
               <span className="text-blue-700">renovado</span> e <span className="text-blue-900">protegido</span>.
@@ -29,10 +29,10 @@ export const Hero: React.FC = () => {
 
             {/* Subheadline: Short, commercial & clear */}
             <p className="text-lg sm:text-xl md:text-2xl text-slate-600 font-semibold leading-snug max-w-xl">
-              Higienização e impermeabilização de estofados em toda a Grande Vitória.
+              Higienização e impermeabilização de estofados em Jardim Camburi e toda a Grande Vitória.
             </p>
 
-            {/* 3 Core Benefits */}
+            {/* 3 Core Differentials */}
             <div className="space-y-2.5 pt-1 text-base sm:text-lg text-slate-800 font-bold">
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-blue-700 shrink-0" />
@@ -52,11 +52,11 @@ export const Hero: React.FC = () => {
             <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               {/* Primary CTA */}
               <a
-                href={getWhatsAppUrl()}
+                href={getWhatsAppUrl('Olá! Gostaria de solicitar um orçamento para higienização de estofados.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-primary-cta"
-                className="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-black text-lg sm:text-xl shadow-xl shadow-blue-700/25 hover:shadow-2xl hover:-translate-y-0.5 transition-all text-center whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-black text-lg sm:text-xl shadow-xl shadow-blue-700/25 transition-colors text-center whitespace-nowrap"
               >
                 <MessageCircle className="w-6 h-6 fill-current" />
                 <span>SOLICITAR ORÇAMENTO</span>
@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
 
           </div>
 
-          {/* Right Column: High Impact Real Photo showing Professional Extraction */}
+          {/* Right Column: High Impact Photo Container */}
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900">
               <img
