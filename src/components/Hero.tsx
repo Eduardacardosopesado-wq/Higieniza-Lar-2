@@ -75,10 +75,10 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5 relative w-full pt-2 lg:pt-0">
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 sm:border-4 border-white bg-slate-900 w-full aspect-[4/3] sm:aspect-auto sm:h-[460px]">
               <img
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80"
-                alt="Profissional realizando higienização de sofá com equipamento extrator"
-                width="1000"
-                height="750"
+                src="/hero_banner.png"
+                alt="Profissional realizando higienização de estofados"
+                width="1536"
+                height="1024"
                 fetchPriority="high"
                 className="w-full h-full object-cover"
               />
