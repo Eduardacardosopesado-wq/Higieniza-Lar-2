@@ -88,7 +88,7 @@ export const WaterproofingHighlight: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-950">
               {!imgError ? (
                 <img
-                  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80"
+                  src="/impermeabilizacao_destaque.png"
                   alt="Impermeabilização de Estofado"
                   loading="lazy"
                   onError={() => setImgError(true)}

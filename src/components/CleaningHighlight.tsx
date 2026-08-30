@@ -33,7 +33,7 @@ export const CleaningHighlight: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-slate-100 bg-slate-900">
               {!imgError ? (
                 <img
-                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80"
+                  src="/destaque1_higienizacao.png"
                   alt="Higienização Profissional de Estofados"
                   loading="lazy"
                   onError={() => setImgError(true)}
