@@ -3,6 +3,9 @@ import { MessageCircle, ArrowRight } from 'lucide-react';
 import { getWhatsAppUrl } from '../config/company';
 
 export const BeforeAfter: React.FC = () => {
+  const [beforeImg, setBeforeImg] = React.useState<string>('/sofa_antes.png');
+  const [afterImg, setAfterImg] = React.useState<string>('/sofa_depois.png');
+
   return (
     <section id="antes-e-depois" className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200 text-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,10 +24,18 @@ export const BeforeAfter: React.FC = () => {
           <div className="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md">
             <div className="relative h-64 sm:h-80 bg-slate-900 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+                src={beforeImg}
+                onError={() => {
+                  if (beforeImg === '/sofa_antes.png') {
+                    setBeforeImg('/sofa_antes.png.png');
+                  } else if (beforeImg === '/sofa_antes.png.png') {
+                    setBeforeImg('/sofa_antes.jpg');
+                  }
+                }}
                 alt="Estofado antes da higienização"
                 loading="lazy"
-                className="w-full h-full object-cover brightness-75 contrast-125 saturate-50"
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4 bg-slate-950/90 text-white font-black text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1.5 rounded-xl border border-white/10 shadow-lg">
                 Antes (Uso Diário)
@@ -44,9 +55,17 @@ export const BeforeAfter: React.FC = () => {
           <div className="bg-white rounded-3xl overflow-hidden border-2 border-blue-600/30 shadow-md">
             <div className="relative h-64 sm:h-80 bg-slate-900 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
+                src={afterImg}
+                onError={() => {
+                  if (afterImg === '/sofa_depois.png') {
+                    setAfterImg('/sofa_depois.png.png');
+                  } else if (afterImg === '/sofa_depois.png.png') {
+                    setAfterImg('/sofa_depois.jpg');
+                  }
+                }}
                 alt="Estofado depois da higienização profissional"
                 loading="lazy"
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4 bg-blue-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider px-3.5 py-1.5 rounded-xl shadow-lg">
