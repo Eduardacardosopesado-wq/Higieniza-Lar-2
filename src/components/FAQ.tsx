@@ -86,7 +86,7 @@ export const FAQ: React.FC = () => {
             Ainda tem alguma dúvida?
           </p>
           <a
-            href={getWhatsAppUrl('Olá! Tenho uma dúvida sobre os serviços da Higieniza Lar.')}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-50 text-blue-700 font-extrabold text-base border border-blue-200 hover:bg-blue-100 transition-colors"

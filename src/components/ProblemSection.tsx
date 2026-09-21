@@ -72,7 +72,7 @@ export const ProblemSection: React.FC = () => {
           </p>
 
           <a
-            href={getWhatsAppUrl('Olá! Gostaria de solicitar um orçamento para higienização de estofados.')}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             id="cta-solution-button"

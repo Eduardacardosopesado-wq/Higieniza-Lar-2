@@ -37,7 +37,7 @@ export const ServiceArea: React.FC = () => {
         {/* CTA */}
         <div className="mt-10">
           <a
-            href={getWhatsAppUrl('Olá! Gostaria de saber se vocês atendem no meu bairro/cidade.')}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base sm:text-lg transition-all"

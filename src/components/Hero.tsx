@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               {/* Primary CTA */}
               <a
-                href={getWhatsAppUrl('Olá! Gostaria de solicitar um orçamento para higienização de estofados.')}
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-primary-cta"

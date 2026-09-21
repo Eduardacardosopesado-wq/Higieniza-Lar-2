@@ -112,7 +112,7 @@ export const CleaningHighlight: React.FC = () => {
             {/* CTA Button */}
             <div className="pt-2">
               <a
-                href={getWhatsAppUrl('Olá! Gostaria de solicitar um orçamento para higienização de estofados.')}
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="cta-destaque-higienizacao"

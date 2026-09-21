@@ -93,7 +93,7 @@ export const ServicesSection: React.FC = () => {
 
                   {/* CTA */}
                   <a
-                    href={getWhatsAppUrl(srv.msg)}
+                    href={getWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-blue-50 hover:bg-blue-700 text-blue-700 hover:text-white font-extrabold text-base transition-colors border border-blue-200 hover:border-blue-700"

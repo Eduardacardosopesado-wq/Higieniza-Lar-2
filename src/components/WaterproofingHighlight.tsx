@@ -70,7 +70,7 @@ export const WaterproofingHighlight: React.FC = () => {
             {/* CTA Button */}
             <div className="pt-4">
               <a
-                href={getWhatsAppUrl('Olá! Gostaria de solicitar um orçamento para impermeabilização de estofados.')}
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 id="cta-destaque-impermeabilizacao"

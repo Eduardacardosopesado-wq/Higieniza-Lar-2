@@ -60,7 +60,7 @@ export const SocialProof: React.FC = () => {
 
         <div className="mt-10">
           <a
-            href={getWhatsAppUrl('Olá! Gostaria de agendar meu atendimento.')}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-black text-base sm:text-lg shadow-lg shadow-blue-700/20 transition-all"

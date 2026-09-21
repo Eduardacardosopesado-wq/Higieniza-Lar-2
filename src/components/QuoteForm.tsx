@@ -9,8 +9,7 @@ export const QuoteForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Olá! Meu nome é ${name || 'Cliente'}. Gostaria de um orçamento para *${service}* em *${city}*.`;
-    window.open(getWhatsAppUrl(msg), '_blank');
+    window.open(getWhatsAppUrl(), '_blank');
   };
 
   return (

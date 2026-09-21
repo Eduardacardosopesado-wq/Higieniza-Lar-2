@@ -41,7 +41,7 @@ export const CombinedOffer: React.FC = () => {
         {/* Big CTA */}
         <div className="mt-10">
           <a
-            href={getWhatsAppUrl('Olá! Quero um orçamento para o pacote completo: Higienização + Impermeabilização.')}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             id="cta-pacote-completo"

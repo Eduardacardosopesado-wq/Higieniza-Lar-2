@@ -1,6 +1,5 @@
 import React from 'react';
 import { Check } from 'lucide-react';
-import { getWhatsAppUrl } from '../config/company';
 
 export const Benefits: React.FC = () => {
   const list = [

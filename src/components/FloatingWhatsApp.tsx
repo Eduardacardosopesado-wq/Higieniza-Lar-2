@@ -2,7 +2,7 @@ import React from 'react';
 import { getWhatsAppUrl } from '../config/company';
 
 export const FloatingWhatsApp: React.FC = () => {
-  const whatsappUrl = getWhatsAppUrl('Olá! Gostaria de solicitar um orçamento para higienização de estofados.');
+  const whatsappUrl = getWhatsAppUrl();
 
   return (
     <aside 

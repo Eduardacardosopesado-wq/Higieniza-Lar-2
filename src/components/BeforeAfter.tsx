@@ -87,7 +87,7 @@ export const BeforeAfter: React.FC = () => {
         {/* CTA Button */}
         <div className="mt-12">
           <a
-            href={getWhatsAppUrl('Olá! Gostaria de um orçamento para renovar meu estofado.')}
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             id="cta-antes-depois"
