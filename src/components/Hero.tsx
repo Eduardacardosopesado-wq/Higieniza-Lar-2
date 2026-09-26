@@ -11,21 +11,21 @@ export const Hero: React.FC = () => {
           {/* Left Column (Top on mobile): Big Headline, Clear Hierarchy & Direct CTAs */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
             
-            {/* 1. Selo de Localização */}
+            {/* 1. Selo Superior */}
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-100/90 border border-blue-200 text-blue-950 text-xs sm:text-sm font-black tracking-wide uppercase">
               <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-700 shrink-0" />
-              <span>JARDIM CAMBURI — VITÓRIA/ES</span>
+              <span>ATENDIMENTO EM TODA A GRANDE VITÓRIA</span>
             </div>
 
             {/* 2. Título */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.15]">
-              Seu sofá limpo, <br className="hidden sm:inline" />
-              <span className="text-blue-700">renovado</span> e <span className="text-blue-900">protegido</span>.
+              Higienização de estofados <br className="hidden sm:inline" />
+              em <span className="text-blue-700">toda a Grande Vitória</span>
             </h1>
 
             {/* 3. Subtítulo */}
             <p className="text-base sm:text-lg md:text-xl text-slate-600 font-semibold leading-relaxed max-w-xl">
-              Higienização e impermeabilização de estofados em Jardim Camburi e toda a Grande Vitória.
+              Seu sofá limpo, renovado e protegido com um serviço profissional e cuidadoso.
             </p>
 
             {/* 4. Destaques (Uma única coluna no mobile) */}
@@ -33,6 +33,10 @@ export const Hero: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700 shrink-0" />
                 <span>Higienização profissional</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700 shrink-0" />
+                <span>Produtos específicos para cada tecido</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-blue-700 shrink-0" />
