@@ -71,49 +71,9 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] w-full" id="header">
-      {/* 1. Top micro bar — discreet & compact */}
-      <div className="bg-slate-900 text-slate-300 text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-slate-800/80">
-        <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
-          
-          {/* Left: Location */}
-          <div className="flex items-center gap-1.5 font-medium truncate">
-            <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-            <span className="truncate">
-              <span className="hidden sm:inline">Unidade em </span>
-              <strong className="text-white font-semibold">Jardim Camburi, Vitória</strong>
-              <span className="hidden md:inline text-slate-500 mx-2">|</span>
-              <span className="hidden md:inline">Toda a Grande Vitória</span>
-            </span>
-          </div>
-
-          {/* Right: Instagram & WhatsApp */}
-          <div className="flex items-center gap-2.5 sm:gap-3 text-slate-300 shrink-0">
-            <a 
-              href={COMPANY.INSTAGRAM_URL} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hidden sm:inline hover:text-white transition-colors"
-            >
-              {COMPANY.INSTAGRAM_HANDLE}
-            </a>
-            <span className="hidden sm:inline text-slate-600">|</span>
-            <a 
-              href={COMPANY.WHATSAPP_URL} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-green-400 text-slate-200 font-semibold transition-colors flex items-center gap-1"
-            >
-              <span className="hidden sm:inline">WhatsApp:</span>
-              <span className="text-white font-bold">{COMPANY.PHONE_FORMATTED}</span>
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      {/* 2. Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 lg:h-22 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] w-full" id="header">
+      {/* Main Navigation Bar - 100% clean white background */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
         
         {/* Left: Large Prominent Brand Logo */}
         <div className="flex-shrink-0">
@@ -123,12 +83,12 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Center: Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-9 text-[15px] font-semibold text-slate-700 whitespace-nowrap" aria-label="Menu Principal">
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-10 text-[15px] font-semibold text-slate-700 whitespace-nowrap" aria-label="Menu Principal">
           
-          {/* Link 1: Início */}
+          {/* Link 1: Início (Active with blue underline) */}
           <a
             href="#inicio"
-            className="hover:text-blue-700 transition-colors py-2"
+            className="text-[#0A6CFF] font-bold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2.5px] after:bg-[#0A6CFF] after:rounded-full transition-colors"
           >
             Início
           </a>
@@ -229,33 +189,34 @@ export const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             id="header-cta-button"
-            className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm tracking-wide shadow-lg shadow-blue-700/20 whitespace-nowrap transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#0A6CFF] hover:bg-[#005FE6] text-white font-extrabold text-sm tracking-wide shadow-md shadow-blue-500/20 whitespace-nowrap transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
             <span>SOLICITAR ORÇAMENTO</span>
           </a>
         </div>
 
-        {/* Mobile controls: LOGO | BOTÃO WHATSAPP | MENU HAMBÚRGUER */}
-        <div className="flex lg:hidden items-center gap-2">
+        {/* Mobile controls: BOTÃO SOLICITAR ORÇAMENTO + MENU HAMBÚRGUER (Idêntico à referência mobile) */}
+        <div className="flex lg:hidden items-center gap-2 sm:gap-3">
           <a
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm transition-colors"
-            aria-label="Falar pelo WhatsApp"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#0A6CFF] hover:bg-[#005FE6] text-white font-extrabold text-[10.5px] sm:text-xs tracking-wide shadow-sm shadow-blue-500/25 uppercase whitespace-nowrap active:scale-95 transition-all"
+            aria-label="Solicitar orçamento pelo WhatsApp"
           >
-            <MessageCircle className="w-5 h-5 fill-current" />
+            <MessageCircle className="w-3.5 h-3.5 fill-current shrink-0" />
+            <span>SOLICITAR ORÇAMENTO</span>
           </a>
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex items-center justify-center w-10 h-10 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none border border-slate-200 transition-colors"
+            className="p-1.5 text-slate-800 hover:text-blue-600 focus:outline-none transition-colors"
             aria-expanded={mobileMenuOpen}
             aria-label="Abrir menu"
             id="mobile-menu-toggle"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 stroke-[2.5]" /> : <Menu className="w-6 h-6 stroke-[2.5]" />}
           </button>
         </div>
 

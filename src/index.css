@@ -3,6 +3,7 @@
 @layer base {
   :root {
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-poppins: 'Poppins', 'Plus Jakarta Sans', system-ui, sans-serif;
   }
 
   body {
@@ -18,6 +19,8 @@
     outline-offset: 2px;
   }
 }
+
+/* Hero background is solid #F8FAFF with integrated photograph */
 
 /* Custom smooth styling for details / summary accordion */
 details summary::-webkit-details-marker {

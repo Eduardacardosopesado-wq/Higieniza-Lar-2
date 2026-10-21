@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { TrustBar } from './components/TrustBar';
 import { ProblemSection } from './components/ProblemSection';
 import { ServicesSection } from './components/ServicesSection';
 import { CleaningHighlight } from './components/CleaningHighlight';
@@ -30,10 +29,7 @@ export default function App() {
         {/* 2. Hero - Primeira Dobra */}
         <Hero />
 
-        {/* 3. Barra de Confiança */}
-        <TrustBar />
-
-        {/* 4. O Problema */}
+        {/* 3. O Problema */}
         <ProblemSection />
 
         {/* 5. Serviços Principais e Secundários */}
