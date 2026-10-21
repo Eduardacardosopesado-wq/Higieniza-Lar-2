@@ -1,6 +1,6 @@
 import React from 'react';
 import { getWhatsAppUrl } from '../config/company';
-import { ShieldCheck, Heart, MapPin, ChevronRight, Star } from 'lucide-react';
+import { ShieldCheck, Heart, MapPin, ChevronRight, Star, Sparkles } from 'lucide-react';
 
 // Google 4-color "G" Icon matching the reference image card
 const GoogleGIcon = ({ className = "w-7 h-7" }: { className?: string }) => (
@@ -114,209 +114,120 @@ export const Hero: React.FC = () => {
       className="relative bg-[#F8FAFF] overflow-hidden w-full flex flex-col justify-center min-[769px]:min-h-[750px] lg:min-h-[790px] xl:min-h-[820px]"
     >
       {/* ========================================================================= */}
-      {/* 1. VERSÃO MOBILE (< 769px) - PRESERVADA E IDÊNTICA AO MOCKUP MOBILE        */}
+      {/* 1. VERSÃO MOBILE (< 769px) - EXATAMENTE IDÊNTICA AO MOCKUP DA REFERÊNCIA  */}
       {/* ========================================================================= */}
-      <div className="block min-[769px]:hidden w-full">
-        {/* A. FOTOGRAFIA DO SOFÁ COM LINHA CURVA LUMINOSA E TRANSIÇÃO EM ONDA */}
-        <div className="relative w-full h-[250px] xs:h-[280px] sm:h-[320px] overflow-hidden select-none bg-slate-100">
-          <img 
-            src="/assets/aistudio/Sof__Metade_Sujo__Metade_Limpo_aeefb401.png"
-            alt="Antes e depois real do sofá higienizado pela Higieniza Lar"
-            className="w-full h-full object-cover object-[center_36%]"
-            loading="eager"
-            fetchPriority="high"
-          />
-
-          {/* Linha vertical divisória curva com feixe de luz azul/branco brilhante */}
-          <svg 
-            className="absolute inset-0 w-full h-full pointer-events-none z-10" 
-            viewBox="0 0 400 300" 
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <filter id="mobile-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="blur1" />
-                <feGaussianBlur stdDeviation="9" result="blur2" />
-                <feMerge>
-                  <feMergeNode in="blur2" />
-                  <feMergeNode in="blur1" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-            <path
-              d="M 220 0 Q 185 140 178 300"
-              stroke="#1677FF"
-              strokeWidth="5"
-              strokeOpacity="0.75"
-              fill="none"
-              filter="url(#mobile-glow)"
-            />
-            <path
-              d="M 220 0 Q 185 140 178 300"
-              stroke="#FFFFFF"
-              strokeWidth="2.2"
-              strokeOpacity="0.95"
-              fill="none"
-            />
-          </svg>
-
-          {/* Etiqueta ANTES */}
-          <div 
-            className="absolute bg-[#2B2F38] text-white text-[10.5px] xs:text-xs font-black px-3.5 py-1.5 rounded-full shadow-md uppercase tracking-wider -translate-x-1/2 pointer-events-none z-20 border border-white/15 bottom-[24%]"
-            style={{ left: '26%' }}
-          >
-            ANTES
+      <div className="block min-[769px]:hidden w-full px-5 pt-5 pb-8 space-y-4 text-left">
+        
+        {/* 1. Localização */}
+        <div className="flex justify-start">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF3FE] border border-[#BFDBFE] text-[#0A6CFF] text-[11px] font-bold tracking-wider uppercase">
+            <MapPin className="w-3.5 h-3.5 text-[#0A6CFF] shrink-0" />
+            <span>JARDIM CAMBURI • VITÓRIA/ES</span>
           </div>
+        </div>
 
-          {/* Etiqueta DEPOIS */}
-          <div 
-            className="absolute bg-[#0A6CFF] text-white text-[10.5px] xs:text-xs font-black px-3.5 py-1.5 rounded-full shadow-md shadow-blue-500/30 uppercase tracking-wider -translate-x-1/2 pointer-events-none z-20 border border-white/20 bottom-[24%]"
-            style={{ left: '74%' }}
-          >
-            DEPOIS
+        {/* 2. Título (H1) */}
+        <h1 className="text-[32px] font-black tracking-tight leading-[1.12] font-['Poppins',sans-serif] text-left">
+          <span className="text-[#08152F] block">Seu sofá limpo,</span>
+          <span className="text-[#0A6CFF] block">renovado e protegido.</span>
+        </h1>
+
+        {/* 3. Subtítulo em Destaque Azul */}
+        <p className="text-[#0A6CFF] font-bold text-[16.5px] leading-snug text-left">
+          Higienização de estofados em toda a Grande Vitória.
+        </p>
+
+        {/* 4. Descrição / Texto de Apoio */}
+        <p className="text-[#64748B] text-[13.5px] leading-relaxed text-left font-normal">
+          Atendimento em Vitória, Vila Velha, Serra e Cariacica. Sofás, colchões, cadeiras e poltronas com limpeza profissional e cuidado para cada tipo de tecido.
+        </p>
+
+
+        {/* 6. Card Avaliação Google */}
+        <div className="w-full bg-white rounded-2xl py-3 px-4 flex items-center justify-between border border-slate-200/70 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+          <div className="flex items-center gap-3">
+            <GoogleGIcon className="w-7 h-7 shrink-0" />
+            <div className="flex items-center gap-1 shrink-0" aria-label="5 estrelas">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-[#FBBC05] text-[#FBBC05]" />
+              ))}
+            </div>
           </div>
+          <div className="flex flex-col text-left pl-2">
+            <span className="text-[12.5px] font-bold text-[#08152F] leading-tight">
+              5 estrelas no Google
+            </span>
+            <span className="text-[11px] text-[#64748B] font-medium leading-tight">
+              +1.000 famílias satisfeitas
+            </span>
+          </div>
+        </div>
 
-          {/* Transição em onda suave na base */}
-          <div className="absolute -bottom-1 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none z-10">
+        {/* 7. Botão Primário WhatsApp */}
+        <a
+          href={getWhatsAppUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          id="hero-mobile-primary-cta"
+          className="w-full py-3.5 px-4 rounded-2xl bg-[#00C853] hover:bg-[#00B348] text-white flex items-center justify-between shadow-lg shadow-emerald-500/25 active:scale-[0.99] transition-all"
+          aria-label="Solicitar orçamento pelo WhatsApp"
+        >
+          <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0">
             <svg 
-              viewBox="0 0 375 28" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="w-full h-6 xs:h-7"
-              preserveAspectRatio="none"
+              viewBox="0 0 24 24" 
+              width="20" 
+              height="20" 
+              fill="#00C853" 
+              className="w-5 h-5 shrink-0" 
+              aria-hidden="true"
             >
-              <path 
-                d="M0,12 C90,24 240,2 375,16 L375,28 L0,28 Z" 
-                fill="#E8F1FD" 
-                opacity="0.9" 
-              />
-              <path 
-                d="M0,16 C110,26 260,6 375,20 L375,28 L0,28 Z" 
-                fill="#F8FAFF" 
-              />
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.62L5.07 16.3C4.24 14.98 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.04 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15ZM16.56 14.39C16.31 14.26 15.09 13.66 14.86 13.58C14.64 13.5 14.47 13.46 14.31 13.71C14.15 13.96 13.68 14.51 13.53 14.68C13.39 14.85 13.25 14.87 13 14.75C12.75 14.62 11.96 14.36 11.02 13.52C10.28 12.87 9.79 12.06 9.64 11.81C9.5 11.56 9.63 11.43 9.75 11.31C9.86 11.2 10 11.04 10.13 10.9C10.25 10.75 10.29 10.65 10.37 10.48C10.45 10.32 10.41 10.17 10.35 10.05C10.29 9.92 9.82 8.77 9.63 8.3C9.44 7.84 9.25 7.9 9.11 7.89C8.98 7.89 8.82 7.89 8.66 7.89C8.5 7.89 8.23 7.95 8.01 8.19C7.79 8.43 7.16 9.02 7.16 10.23C7.16 11.44 8.04 12.6 8.16 12.77C8.29 12.93 9.89 15.4 12.35 16.46C12.94 16.71 13.39 16.86 13.75 16.97C14.34 17.16 14.88 17.13 15.3 17.07C15.77 17 16.75 16.48 16.96 15.9C17.16 15.31 17.16 14.81 17.1 14.71C17.04 14.6 16.81 14.52 16.56 14.39Z" />
             </svg>
           </div>
-        </div>
-
-        {/* B. CONTEÚDO PRINCIPAL NO MOBILE */}
-        <div className="px-4 xs:px-5 pt-3 pb-6 space-y-4 text-center">
-          
-          {/* 1. Localização */}
-          <div className="flex justify-center">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EBF3FE] border border-[#D4E5FD] text-[#0A6CFF] text-[11px] font-extrabold tracking-wider uppercase shadow-2xs">
-              <MapPin className="w-3 h-3 text-[#0A6CFF] shrink-0" />
-              <span>JARDIM CAMBURI • GRANDE VITÓRIA/ES</span>
-            </div>
-          </div>
-
-          {/* 2. Título */}
-          <h1 className="text-[27px] xs:text-[31px] font-black tracking-tight leading-[1.14] font-['Poppins',sans-serif]">
-            <span className="text-[#08152F] block">Seu sofá limpo, renovado e</span>
-            <span className="text-[#1677FF] block">seguro para quem você ama.</span>
-          </h1>
-
-          {/* 3. Descrição */}
-          <p className="text-[13.5px] xs:text-[14.5px] text-[#475569] font-medium leading-relaxed max-w-sm mx-auto">
-            Produtos <span className="font-semibold text-slate-700">liberados pela Anvisa</span>, seguros para crianças e pets. Atendemos <span className="font-semibold text-slate-700">toda a Grande Vitória</span>.
-          </p>
-
-          {/* 4. Três diferenciais em linha única */}
-          <div className="pt-0.5 pb-0.5">
-            <div className="flex items-center justify-between text-left divide-x divide-slate-200/90 max-w-sm mx-auto">
-              <div className="flex items-center gap-1.5 pr-2 flex-1 min-w-0">
-                <div className="w-7 h-7 rounded-full bg-[#EBF3FE] flex items-center justify-center text-[#1677FF] shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
-                <div className="text-[10px] xs:text-[10.5px] font-bold text-[#08152F] leading-tight">
-                  <span className="block">Produtos liberados</span>
-                  <span className="block text-slate-500 font-semibold">pela Anvisa</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-1.5 px-2 flex-1 min-w-0">
-                <div className="w-7 h-7 rounded-full bg-[#EBF3FE] flex items-center justify-center text-[#1677FF] shrink-0">
-                  <Heart className="w-3.5 h-3.5" />
-                </div>
-                <div className="text-[10px] xs:text-[10.5px] font-bold text-[#08152F] leading-tight">
-                  <span className="block">Seguro para</span>
-                  <span className="block text-slate-500 font-semibold">crianças e pets</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-1.5 pl-2 flex-1 min-w-0">
-                <div className="w-7 h-7 rounded-full bg-[#EBF3FE] flex items-center justify-center text-[#1677FF] shrink-0">
-                  <MapPin className="w-3.5 h-3.5 text-[#1677FF]" />
-                </div>
-                <div className="text-[10px] xs:text-[10.5px] font-bold text-[#08152F] leading-tight">
-                  <span className="block">Atendimento em</span>
-                  <span className="block text-slate-500 font-semibold">toda a Grande Vitória</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 5. Botão WhatsApp Primário */}
-          <a
-            href={getWhatsAppUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-            id="hero-mobile-primary-cta"
-            className="w-full h-[52px] rounded-full bg-[#00C853] hover:bg-[#00B348] text-white flex items-center justify-between px-4.5 shadow-lg shadow-emerald-500/25 active:scale-[0.99] transition-all"
-            aria-label="Orçar pelo WhatsApp"
-          >
-            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0">
-              <svg 
-                viewBox="0 0 24 24" 
-                width="19" 
-                height="19" 
-                fill="#00C853" 
-                className="w-4.5 h-4.5 shrink-0" 
-                aria-hidden="true"
-              >
-                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.62L5.07 16.3C4.24 14.98 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.04 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15ZM16.56 14.39C16.31 14.26 15.09 13.66 14.86 13.58C14.64 13.5 14.47 13.46 14.31 13.71C14.15 13.96 13.68 14.51 13.53 14.68C13.39 14.85 13.25 14.87 13 14.75C12.75 14.62 11.96 14.36 11.02 13.52C10.28 12.87 9.79 12.06 9.64 11.81C9.5 11.56 9.63 11.43 9.75 11.31C9.86 11.2 10 11.04 10.13 10.9C10.25 10.75 10.29 10.65 10.37 10.48C10.45 10.32 10.41 10.17 10.35 10.05C10.29 9.92 9.82 8.77 9.63 8.3C9.44 7.84 9.25 7.9 9.11 7.89C8.98 7.89 8.82 7.89 8.66 7.89C8.5 7.89 8.23 7.95 8.01 8.19C7.79 8.43 7.16 9.02 7.16 10.23C7.16 11.44 8.04 12.6 8.16 12.77C8.29 12.93 9.89 15.4 12.35 16.46C12.94 16.71 13.39 16.86 13.75 16.97C14.34 17.16 14.88 17.13 15.3 17.07C15.77 17 16.75 16.48 16.96 15.9C17.16 15.31 17.16 14.81 17.1 14.71C17.04 14.6 16.81 14.52 16.56 14.39Z" />
-              </svg>
-            </div>
-            <span className="text-[13.5px] xs:text-[14.5px] font-extrabold uppercase tracking-wide text-white flex-1 text-center px-2 whitespace-nowrap">
-              Orçar pelo WhatsApp
+          <div className="flex flex-col text-left pl-3 flex-1">
+            <span className="text-[13px] font-black uppercase tracking-wider text-white leading-tight">
+              SOLICITAR ORÇAMENTO
             </span>
-            <ChevronRight className="w-5 h-5 xs:w-6 xs:h-6 stroke-[3] text-white shrink-0" />
-          </a>
+            <span className="text-[13px] font-black uppercase tracking-wider text-white leading-tight">
+              PELO WHATSAPP
+            </span>
+          </div>
+          <ChevronRight className="w-6 h-6 stroke-[3] text-white shrink-0" />
+        </a>
 
-          {/* 6. Botão Secundário Branco */}
-          <a
-            href="#antes-e-depois"
-            id="hero-mobile-secondary"
-            className="w-full h-[46px] rounded-full bg-white hover:bg-blue-50/60 border-[1.5px] border-[#1677FF] text-[#1677FF] font-extrabold text-[12px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-2xs active:scale-[0.99] transition-all text-center"
-          >
-            <span>VER ANTES E DEPOIS</span>
-            <ChevronRight className="w-4 h-4 stroke-[3]" />
-          </a>
+        {/* 8. Botão Secundário Branco */}
+        <a
+          href="#antes-e-depois"
+          id="hero-mobile-secondary"
+          className="w-full py-3.5 px-6 rounded-full bg-white hover:bg-blue-50/60 border-2 border-[#0A6CFF] text-[#0A6CFF] font-bold text-[13px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-2xs active:scale-[0.99] transition-all text-center"
+        >
+          <span>VER ANTES E DEPOIS</span>
+          <ChevronRight className="w-4 h-4 stroke-[3] text-[#0A6CFF]" />
+        </a>
 
-          {/* 7. Card Seletor de Categorias no rodapé da Hero */}
-          <div className="pt-2">
-            <div className="w-full bg-white/95 backdrop-blur-xs rounded-2xl border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] py-2.5 px-1">
-              <div className="grid grid-cols-4 divide-x divide-slate-100">
-                <a href="#servicos" className="flex flex-col items-center justify-center text-center p-1 hover:text-[#1677FF] transition-colors">
-                  <SofaOutlineIcon className="w-6 h-6 text-[#08152F]" />
-                  <span className="text-[11px] font-semibold text-[#08152F] mt-1.5">Sofás</span>
-                </a>
-                <a href="#servicos" className="flex flex-col items-center justify-center text-center p-1 hover:text-[#1677FF] transition-colors">
-                  <MattressIcon className="w-6 h-6 text-[#08152F]" />
-                  <span className="text-[11px] font-semibold text-[#08152F] mt-1.5">Colchões</span>
-                </a>
-                <a href="#servicos" className="flex flex-col items-center justify-center text-center p-1 hover:text-[#1677FF] transition-colors">
-                  <ChairIcon className="w-6 h-6 text-[#08152F]" />
-                  <span className="text-[11px] font-semibold text-[#08152F] mt-1.5">Cadeiras</span>
-                </a>
-                <a href="#servicos" className="flex flex-col items-center justify-center text-center p-1 hover:text-[#1677FF] transition-colors">
-                  <ArmchairOutlineIcon className="w-6 h-6 text-[#08152F]" />
-                  <span className="text-[11px] font-semibold text-[#08152F] mt-1.5">Poltronas</span>
-                </a>
-              </div>
+        {/* 9. Fotografia Real do Sofá (Antes e Depois) no Rodapé da Hero */}
+        <div className="pt-2">
+          <div className="relative w-full h-[250px] xs:h-[280px] sm:h-[320px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 shadow-md bg-slate-100 select-none">
+            <img 
+              src="/assets/aistudio/Sof__Metade_Sujo__Metade_Limpo_aeefb401.png"
+              alt="Antes e depois real do sofá higienizado pela Higieniza Lar"
+              className="w-full h-full object-cover object-[center_36%]"
+              loading="eager"
+              fetchPriority="high"
+            />
+
+            {/* Etiqueta ANTES */}
+            <div className="absolute bottom-3 left-4 bg-[#1E232D]/90 backdrop-blur-xs text-white text-[11px] font-black px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider pointer-events-none z-20 border border-white/10">
+              ANTES
+            </div>
+
+            {/* Etiqueta DEPOIS */}
+            <div className="absolute bottom-3 right-4 bg-[#0A6CFF] text-white text-[11px] font-black px-4 py-1.5 rounded-full shadow-md shadow-blue-500/30 uppercase tracking-wider pointer-events-none z-20 border border-white/20">
+              DEPOIS
             </div>
           </div>
         </div>
+
       </div>
 
       {/* ========================================================================= */}
