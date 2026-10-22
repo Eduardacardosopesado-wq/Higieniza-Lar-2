@@ -127,19 +127,14 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* 2. Título (H1) */}
-        <h1 className="text-[32px] font-black tracking-tight leading-[1.12] font-['Poppins',sans-serif] text-left">
-          <span className="text-[#08152F] block">Seu sofá limpo,</span>
-          <span className="text-[#0A6CFF] block">renovado e protegido.</span>
+        <h1 className="text-[25px] xs:text-[28px] sm:text-[32px] font-black tracking-tight leading-[1.15] font-['Poppins',sans-serif] text-left">
+          <span className="text-[#08152F] block">Limpeza e impermeabilização</span>
+          <span className="text-[#0A6CFF] block">de sofá na Grande Vitória</span>
         </h1>
 
-        {/* 3. Subtítulo em Destaque Azul */}
-        <p className="text-[#0A6CFF] font-bold text-[16.5px] leading-snug text-left">
-          Higienização de estofados em toda a Grande Vitória.
-        </p>
-
-        {/* 4. Descrição / Texto de Apoio */}
-        <p className="text-[#64748B] text-[13.5px] leading-relaxed text-left font-normal">
-          Atendimento em Vitória, Vila Velha, Serra e Cariacica. Sofás, colchões, cadeiras e poltronas com limpeza profissional e cuidado para cada tipo de tecido.
+        {/* 3. Subtítulo */}
+        <p className="text-[14px] xs:text-[15px] sm:text-[16px] text-[#475569] font-medium leading-relaxed text-left">
+          Produtos liberados pela Anvisa, seguros para crianças e pets.
         </p>
 
 
@@ -248,14 +243,14 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* 2. Título Principal em Duas Linhas */}
-            <h1 className="text-4xl lg:text-[3.25rem] xl:text-[3.65rem] font-black tracking-tight leading-[1.12] font-['Poppins',sans-serif]">
-              <span className="text-[#08152F] block">Seu sofá limpo, renovado e</span>
-              <span className="text-[#1677FF] block">seguro para quem você ama.</span>
+            <h1 className="text-3xl lg:text-[2.75rem] xl:text-[3.15rem] font-black tracking-tight leading-[1.14] font-['Poppins',sans-serif]">
+              <span className="text-[#08152F] block">Limpeza e impermeabilização</span>
+              <span className="text-[#1677FF] block">de sofá na Grande Vitória</span>
             </h1>
 
             {/* 3. Subtítulo Descritivo */}
-            <p className="text-[16.5px] lg:text-[18px] text-[#475569] font-medium leading-relaxed">
-              Higienização e impermeabilização de estofados com produtos <span className="font-semibold text-slate-700">liberados pela Anvisa</span>, seguros para crianças e pets. Atendemos Jardim Camburi e <span className="font-semibold text-slate-700">toda a Grande Vitória</span>.
+            <p className="text-[16px] lg:text-[17.5px] text-[#475569] font-medium leading-relaxed">
+              Produtos liberados pela Anvisa, seguros para crianças e pets.
             </p>
 
             {/* 4. Card Social Proof Oficial Google (Idêntico à referência) */}
