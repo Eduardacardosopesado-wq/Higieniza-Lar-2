@@ -1,6 +1,6 @@
 {
-  "name": "Higieniza Lar",
-  "description": "Higienização e Impermeabilização Profissional de Estofados em Vitória e toda Grande Vitória - ES.",
+  "name": "HigienizaLar",
+  "description": "Higienização e impermeabilização profissional de sofás e estofados na Grande Vitória - ES.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

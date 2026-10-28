@@ -73,7 +73,7 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] w-full" id="header">
       {/* Main Navigation Bar - 100% clean white background */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-22 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-20 lg:h-22 flex items-center justify-between">
         
         {/* Left: Large Prominent Brand Logo */}
         <div className="flex-shrink-0">
@@ -189,6 +189,7 @@ export const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             id="header-cta-button"
+            data-local="header"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#0A6CFF] hover:bg-[#005FE6] text-white font-extrabold text-sm tracking-wide shadow-md shadow-blue-500/20 whitespace-nowrap transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
@@ -202,6 +203,7 @@ export const Header: React.FC = () => {
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
+            data-local="header"
             className="w-10 h-10 rounded-xl bg-[#00C853] hover:bg-[#00B048] flex items-center justify-center text-white shadow-sm active:scale-95 transition-all"
             aria-label="Falar pelo WhatsApp"
           >

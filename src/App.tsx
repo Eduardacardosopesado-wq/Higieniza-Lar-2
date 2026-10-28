@@ -1,84 +1,52 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { ProblemSection } from './components/ProblemSection';
+import { GoogleReviewsSection } from './components/GoogleReviewsSection';
+import { TrustBar } from './components/TrustBar';
 import { ServicesSection } from './components/ServicesSection';
-import { CleaningHighlight } from './components/CleaningHighlight';
-import { WaterproofingHighlight } from './components/WaterproofingHighlight';
-import { CombinedOffer } from './components/CombinedOffer';
-import { BeforeAfter } from './components/BeforeAfter';
 import { HowItWorks } from './components/HowItWorks';
-import { Benefits } from './components/Benefits';
-import { AuthoritySection } from './components/AuthoritySection';
-import { ServiceArea } from './components/ServiceArea';
-import { SocialProof } from './components/SocialProof';
-import { InstagramSection } from './components/InstagramSection';
+import { WhyChooseUs } from './components/WhyChooseUs';
 import { FAQ } from './components/FAQ';
-import { QuoteForm } from './components/QuoteForm';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8FAFC] text-slate-900 selection:bg-blue-600 selection:text-white overflow-x-hidden w-full max-w-full">
-      {/* 1. Header with brand logo, nav links and CTA */}
+    <div className="min-h-screen bg-white text-[#0F172A] font-['Plus_Jakarta_Sans',sans-serif] selection:bg-blue-600 selection:text-white">
+      {/* 1. Header (Logo e Menu preservados intactos) */}
       <Header />
 
-      <main className="flex-grow w-full max-w-full overflow-x-hidden">
-        {/* 2. Hero - Primeira Dobra */}
+      <main>
+        {/* 2. Hero (Título, subtítulo, slider interativo antes/depois, Google 5★, Sofá limpo em até 2h, CTA verde único) */}
         <Hero />
 
-        {/* 3. O Problema */}
-        <ProblemSection />
+        {/* 3. Avaliações reais do Google (Prints anexados imediatamente abaixo da Hero) */}
+        <GoogleReviewsSection />
 
-        {/* 5. Serviços Principais e Secundários */}
+        {/* 4. Faixa de Confiança (3 colunas: Google 5★, Anvisa, 2h) */}
+        <TrustBar />
+
+        {/* 5. Serviços (2 cards grandes + 3 cards menores com fotos reais e botões verdes) */}
         <ServicesSection />
 
-        {/* 6. Destaque: Higienização de Estofados */}
-        <CleaningHighlight />
-
-        {/* 7. Destaque: Impermeabilização de Estofados */}
-        <WaterproofingHighlight />
-
-        {/* 8. Oferta Combinada: Limpe. Renove. Proteja */}
-        <CombinedOffer />
-
-        {/* 9. Antes e Depois (Comparação Estática) */}
-        <BeforeAfter />
-
-        {/* 10. Como Funciona (3 Passos) */}
+        {/* 6. Como Funciona (3 passos claros + CTA verde) */}
         <HowItWorks />
 
-        {/* 11. Benefícios (Por que escolher a Higieniza Lar?) */}
-        <Benefits />
+        {/* 7. Por que escolher a HigienizaLar (5 diferenciais em cards escuros + cidades atendidas) */}
+        <WhyChooseUs />
 
-        {/* 12. Autoridade (Cuidado profissional para o seu lar) */}
-        <AuthoritySection />
-
-        {/* 13. Área de Atendimento (Grande Vitória - ES) */}
-        <ServiceArea />
-
-        {/* 14. Prova Social e Avaliações */}
-        <SocialProof />
-
-        {/* 15. Acompanhe a Higieniza Lar no Instagram */}
-        <InstagramSection />
-
-        {/* 16. FAQ (Perguntas Frequentes) */}
+        {/* 8. FAQ (6 dúvidas frequentes em acordeão acessível + CTA verde) */}
         <FAQ />
 
-        {/* 17. Formulário de Orçamento / Geração de WhatsApp */}
-        <QuoteForm />
-
-        {/* 18. CTA Final */}
+        {/* 9. CTA Final (Fundo escuro degradê, telefone e WhatsApp) */}
         <FinalCTA />
       </main>
 
-      {/* 19. Rodapé Oficial */}
+      {/* 10. Rodapé (Logo original, links âncora, Instagram, telefone e copyright) */}
       <Footer />
 
-      {/* 20. Botão Flutuante de WhatsApp (No mobile: apenas ícone circular verde) */}
+      {/* Botão Flutuante do WhatsApp (Aparece após 400px e esconde sobre CTAs verdes) */}
       <FloatingWhatsApp />
     </div>
   );
