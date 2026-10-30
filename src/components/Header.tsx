@@ -83,99 +83,53 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Center: Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10 text-[15px] font-semibold text-slate-700 whitespace-nowrap" aria-label="Menu Principal">
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-8 text-[15px] font-semibold text-slate-700 whitespace-nowrap" aria-label="Menu Principal">
           
-          {/* Link 1: Início (Active with blue underline) */}
-          <a
-            href="#inicio"
-            className="text-[#0A6CFF] font-bold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2.5px] after:bg-[#0A6CFF] after:rounded-full transition-colors"
-          >
-            Início
-          </a>
-
-          {/* Link 2: Serviços with Dropdown */}
+          {/* Link 1: Serviços */}
           <div
             ref={dropdownRef}
             className="relative"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <button
-              type="button"
-              onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-              className={`flex items-center gap-1.5 py-2 hover:text-blue-700 transition-colors cursor-pointer ${
-                servicesDropdownOpen ? 'text-blue-700' : ''
-              }`}
-              aria-expanded={servicesDropdownOpen}
-              aria-haspopup="true"
+            <a
+              href="#servicos"
+              onClick={() => setServicesDropdownOpen(false)}
+              className="inline-flex items-center gap-1.5 py-2 hover:text-[#0A6CFF] transition-colors"
             >
               <span>Serviços</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-blue-700' : 'text-slate-400'}`} />
-            </button>
-
-            {/* Dropdown Menu Box */}
-            {servicesDropdownOpen && (
-              <div 
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2.5 space-y-1.5 z-50"
-              >
-                {serviceSubItems.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <a
-                      key={idx}
-                      href={item.href}
-                      onClick={() => setServicesDropdownOpen(false)}
-                      className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-slate-50 transition-colors group"
-                    >
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${item.color}`}>
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-bold text-slate-900 text-sm group-hover:text-blue-700 transition-colors flex items-center justify-between">
-                          <span>{item.name}</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-blue-700" />
-                        </p>
-                        <p className="text-xs text-slate-500 font-normal mt-0.5 leading-snug">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </a>
-                  );
-                })}
-
-                <div className="pt-2 border-t border-slate-100 mt-1 px-1">
-                  <a
-                    href="#servicos"
-                    onClick={() => setServicesDropdownOpen(false)}
-                    className="block text-center py-2 text-xs font-bold text-blue-700 hover:text-blue-800 hover:underline"
-                  >
-                    Ver todos os serviços →
-                  </a>
-                </div>
-              </div>
-            )}
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+            </a>
           </div>
 
-          {/* Link 3: Antes e Depois */}
-          <a
-            href="#antes-e-depois"
-            className="hover:text-blue-700 transition-colors py-2"
-          >
-            Antes e Depois
-          </a>
-
-          {/* Link 4: Como Funciona */}
+          {/* Link 2: Como Funciona */}
           <a
             href="#como-funciona"
-            className="hover:text-blue-700 transition-colors py-2"
+            className="hover:text-[#0A6CFF] transition-colors py-2"
           >
-            Como Funciona
+            Como funciona
+          </a>
+
+          {/* Link 3: Benefícios */}
+          <a
+            href="#beneficios"
+            className="hover:text-[#0A6CFF] transition-colors py-2"
+          >
+            Benefícios
+          </a>
+
+          {/* Link 4: Quem somos */}
+          <a
+            href="#sobre"
+            className="hover:text-[#0A6CFF] transition-colors py-2"
+          >
+            Quem somos
           </a>
 
           {/* Link 5: FAQ */}
           <a
             href="#faq"
-            className="hover:text-blue-700 transition-colors py-2"
+            className="hover:text-[#0A6CFF] transition-colors py-2"
           >
             FAQ
           </a>
@@ -234,49 +188,13 @@ export const Header: React.FC = () => {
         <div className="lg:hidden bg-white border-b border-slate-200 px-5 pt-3 pb-8 space-y-4 shadow-2xl">
           
           <nav className="flex flex-col space-y-1 text-base font-semibold text-slate-800">
-            {/* Início */}
+            {/* Serviços */}
             <a
-              href="#inicio"
+              href="#servicos"
               onClick={() => setMobileMenuOpen(false)}
               className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-50"
             >
-              Início
-            </a>
-
-            {/* Serviços (Grouped) */}
-            <div className="py-2 px-3 rounded-xl bg-slate-50/80 border border-slate-100">
-              <button
-                type="button"
-                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className="w-full flex items-center justify-between text-left font-bold text-slate-900 py-1"
-              >
-                <span>Serviços</span>
-                <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {mobileServicesOpen && (
-                <div className="mt-2 pl-2 space-y-2 pt-2 border-t border-slate-200/60 text-sm font-medium">
-                  {serviceSubItems.map((item, idx) => (
-                    <a
-                      key={idx}
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1.5 text-slate-600 hover:text-blue-700"
-                    >
-                      • {item.name}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Antes e Depois */}
-            <a
-              href="#antes-e-depois"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-50"
-            >
-              Antes e Depois
+              Serviços
             </a>
 
             {/* Como Funciona */}
@@ -285,34 +203,34 @@ export const Header: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-50"
             >
-              Como Funciona
-            </a>
-
-            {/* FAQ */}
-            <a
-              href="#faq"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-50"
-            >
-              FAQ
-            </a>
-
-            {/* Área de Atendimento */}
-            <a
-              href="#area-atendimento"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-50"
-            >
-              Área de Atendimento
+              Como funciona
             </a>
 
             {/* Benefícios */}
             <a
               href="#beneficios"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors"
+              className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-50"
             >
               Benefícios
+            </a>
+
+            {/* Quem somos */}
+            <a
+              href="#sobre"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-50"
+            >
+              Quem somos
+            </a>
+
+            {/* FAQ */}
+            <a
+              href="#faq"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-3 px-3 rounded-xl hover:bg-slate-50 transition-colors"
+            >
+              FAQ
             </a>
           </nav>
 
