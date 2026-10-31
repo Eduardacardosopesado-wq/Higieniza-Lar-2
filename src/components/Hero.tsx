@@ -2,7 +2,7 @@ import React from 'react';
 import { getWhatsAppUrl } from '../config/company';
 
 export const Hero: React.FC = () => {
-  const whatsappUrl = getWhatsAppUrl("Olá! Vi o site e gostaria de solicitar um orçamento para limpeza e impermeabilização de sofá.");
+  const whatsappUrl = getWhatsAppUrl("Olá! Vim pelo site e gostaria de um orçamento para limpeza e/ou impermeabilização dos meus estofados.");
 
   return (
     <section id="inicio" className="relative bg-[#0060DF] text-white overflow-hidden border-b border-blue-400/20">
